@@ -1,0 +1,14 @@
+version: '3.8'  # Version of the Docker Compose file syntax
+services:  # Define the services (containers) for your application
+  frontend:
+    build: ./ResumeBuilderAngular/
+    ports:
+      - "80:4200"
+    depends_on:
+      - backend
+  backend:
+    build: ./ResumeBuilderBackend/
+    ports:
+      - "4292:4292"
+    # volumes: 
+    #   - ./ResumeBuilderBackend/.env:/app/.env
